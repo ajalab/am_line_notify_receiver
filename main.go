@@ -65,7 +65,7 @@ func (h *amLineNotifyHandler) notify(message *webhook.Message) error {
 			return err
 		}
 
-		log.Printf("error: status code %d: %s", res.StatusCode, string(resBody))
+		return fmt.Errorf("status code %d: %s", res.StatusCode, string(resBody))
 	}
 
 	return nil
